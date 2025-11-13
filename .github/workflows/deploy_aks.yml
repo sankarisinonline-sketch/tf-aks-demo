@@ -25,10 +25,7 @@ jobs:
       - name: Set AKS Context
         uses: azure/aks-set-context@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          client-secret: ${{ secrets.AZURE_CAS }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUB }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           auth-type: spn
           resource-group: gitops
           cluster-name: dev-aks
